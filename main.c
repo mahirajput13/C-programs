@@ -1,28 +1,17 @@
-// this program will count the length of the string without using strlen()
+// display the size of various datatypes
 
 #include <stdio.h>
 int main(void)
 {
-    
-    char str1[] = "hello!";
-    char str2[] = "my name is Mahi";
-    int count = 0;
-    
-    //counts the length of the 1 string
-    while(str1[count]!='\0')
-        count++;
-    
-    //prints the length of the first string
-    printf("the length of the string %s is %d \n", str1, count);
-    
-    //initializing count to 0 and count the length of the 2 string
-    count = 0;
-    while(str2[count]!='\0')
-        count++;
-    
-    //prints the length of the second string
-    printf("the length of the string %s is %d \n", str2, count);
+    //displaying output
+    printf("datatype char occupies %lu bytes\n", sizeof(char));
+    printf("datatype short occupies %lu bytes\n", sizeof(short));
+    printf("datatype int occupies %lu bytes\n", sizeof(int));
+    printf("datatype float occupies %lu bytes\n", sizeof(float));
+    printf("datatype long occupies %lu bytes\n", sizeof(long));
+    printf("datatype double occupies %lu bytes\n", sizeof(double));
+    printf("datatype long long occupies %lu bytes\n", sizeof(long long));
+    printf("datatype long double occupies %lu bytes\n", sizeof(long double));
     
     return 0;
-    
 }
