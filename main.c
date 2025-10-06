@@ -1,18 +1,16 @@
-//program to print number using while loop
-//example of counter controlled loop
+// example of catenation of the strings
 
 #include <stdio.h>
+#include <string.h>
 int main(void)
 {
     
-    int num = 1;
+    char str1[] = "Hey!";
+    char str2[] = "What's up?";
     
-    //using while loop
-    while(num<=5)
-    {
-        printf("%d\n", num);
-        num++;
-    }
+    //catenation of string occurs
+    strcat(str2, str1);
+    printf("final string is %s \n", str2);
     
     return 0;
 }
