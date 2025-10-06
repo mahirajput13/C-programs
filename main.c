@@ -1,22 +1,22 @@
-// strtok function example
+// calculate the sum of numbers from 1 to entered number by user
 
 #include <stdio.h>
-#include <string.h>
 int main(void)
 {
+    int i, n, sum=0;
     
-    char str1[]  = " hello - how are you - my name is - jason";
-    const char str2[] = "-";
-    char *token;
+    //taking input from the user
+    printf("\nenter any number : ");
+    scanf("%d", &n);
     
-    // get the first token
-    token = strtok(str1, str2);
-    
-    // walk through other tokens
-    while(token != NULL)
+    //applying condition for calculating sum upto entered number
+    for (i=1; i<=n; i++)
     {
-        printf("%s\n", token);
-        token = strtok(NULL, str2);
+        sum = sum + i;
     }
+    
+    //displaying output
+    printf("\nsum upto %d is %d \n", n,sum);
+    
     return 0;
 }
