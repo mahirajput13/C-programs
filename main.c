@@ -1,47 +1,34 @@
-// this program calculates your weekly pay
-// number of hours worked in a week are entered by the user
-// display the output as gross pay, the taxes, and the net pay according to given assumptions
+//checks whether the number is prime or not
+//number should be entered by the user
 
 #include <stdio.h>
-int main(void)
+int main (void)
 {
-    float netpay, grosspay, taxes, hours;
+    int num, i, sum = 0;
     
-    //taking input from the user
-    printf("\nenter the number of hours worked in a week : ");
-    scanf("%f", &hours);
+    //entering number bby the user
+    printf("\nenter any number to check whether it is prime or not  : ");
+    scanf("%d", &num);
     
-    //applying condition for calculating grosspay
-    if(hours<=40)
+    //applying condition to check whether it is prime or not
+    for (i=1; i<=num; i++)
     {
-        grosspay = (hours*12.0);
+        if(num%i==0)
+        {
+            sum = sum + 1;
+        }
+    }
+    
+    //printing the output to the user after checking
+    if(sum==2)
+    {
+        printf("\nthe entered number is prime\n");
     }
     else
     {
-        grosspay = (40*12.0) + ((hours-40)*18);
+        printf("\nthe entered number is not prime\n");
     }
     
-    //applying condition for calculating taxes
-    if(grosspay<=300)
-    {
-        taxes = .15*grosspay;
-    }
-    else if(grosspay>300 && grosspay<=450)
-    {
-        taxes = (300.0*.15) + ((grosspay - 300)*.20);
-    }
-    else
-    {
-        taxes = (300.0*.15) + (150.0*.20) + ((grosspay - 450.0)*.25);
-    }
-    
-    //calculating netpay
-    netpay = grosspay - taxes;
-    
-    //displaying output
-    printf("\nyour grosspay this week is %f \n", grosspay);
-    printf("\nyour taxes this week is %f \n", taxes);
-    printf("\nyour netpay this week is %f \n\n", netpay);
     
     return 0;
 }
