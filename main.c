@@ -1,24 +1,34 @@
-//this is my fourth pointer program
-
+//checking and printing prime number between 3 to 100
 #include <stdio.h>
-#include <stdlib.h>
 int main(void)
 {
     
-    long n1 = 0l;
-    long n2 = 0l;
-    long *pnum = NULL;
+    int i, num;
     
-    pnum = &n1;
-    *pnum = 2l;
-    ++n2;
-    n2=+*pnum;
+    printf("\nprime numbers between 3 to 100 are : \n");
     
-    pnum = &n2;
-    ++*pnum;
+    //applying condition to check the number is prime or not
+    for (num=3; num<=100; num++)
+    {
+        int sum=0;
+        
+        for (i=1; i<=num; i++)
+        {
+            
+            if(num%i==0)
+            {
+                sum = sum + 1;
+            }
+            
+        }
+       
+       if(sum==2)
+       {
+           printf("%d, ", num);
+       }
+        
+    }
     
-    printf("n1 = %ld \nn2 = %ld\n*pnum = %ld\n*pnum + n2 = %ld\n", n1, n2, *pnum, *pnum + n2);
-     
     return 0;
-    
 }
+
