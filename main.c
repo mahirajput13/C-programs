@@ -1,19 +1,23 @@
-// multiplying two numbers using return keyword in function
+// determine if the number entered by user is even or odd
 
 #include <stdio.h>
-
-// making a function to multiply two numbers using return keyword
-int mul(int a, int b)
-{
-    int result = a*b;
-    return result;
-}
-
-//main function
 int main(void)
 {
-    int result = 0;
-    result = mul(10, 20);
-    printf("the multiplication of two numbers is %d \n", result);
+    int num;
+    
+    //taking input from the user
+    printf("\nenter any number to check if it is even or odd : ");
+    scanf("%d", &num);
+    
+    //applying condition and displaying output
+    if((num%2)==0)
+    {
+        printf("\nnumber entered by you is even\n");
+    }
+    else
+    {
+        printf("number entered by you is odd\n");
+    }
+    
     return 0;
 }
