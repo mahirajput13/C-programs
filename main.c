@@ -1,22 +1,18 @@
-// calculate the sum of numbers from 1 to entered number by user
+// unsigned int performing on bit level
+// bitwise operators
 
 #include <stdio.h>
-int main(void)
+int main (void)
 {
-    int i, n, sum=0;
     
-    //taking input from the user
-    printf("\nenter any number : ");
-    scanf("%d", &n);
+    unsigned int a = 60; //0011 1100
+    unsigned int b = 13; //0000 1101
+    int result = 0;
     
-    //applying condition for calculating sum upto entered number
-    for (i=1; i<=n; i++)
-    {
-        sum = sum + i;
-    }
+    // this '&', '|'and other bitwise operator works on bit level
+    result = a|b;
     
-    //displaying output
-    printf("\nsum upto %d is %d \n", n,sum);
+    printf("result is %d \n", result);
     
     return 0;
 }
