@@ -1,15 +1,15 @@
-// example of strlen()
-// calculate the length of thr string
+// strstr function example
+// this function searches string from another string
 
 #include <stdio.h>
 #include <string.h>
 int main(void)
 {
     
-    char mystring[] = "Hey! My name is Mahi Rajput.";
-    
-    //calculate and print the lenth of the string
-    printf("the length of the string is : %lu \n", strlen(mystring));
+    char str1[] = "every dog has his day";
+    char  str2[] = "dog";
+    char *pointer = NULL;
+    pointer = strstr(str1, str2);
+    printf(" %c\n", *pointer);
     return 0;
-    
 }
