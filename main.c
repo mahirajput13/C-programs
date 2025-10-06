@@ -1,18 +1,28 @@
-// unsigned int performing on bit level
-// bitwise operators
-
+// this is my fifth pointer program
 #include <stdio.h>
-int main (void)
+#include <stdlib.h>
+int main(void)
 {
     
-    unsigned int a = 60; //0011 1100
-    unsigned int b = 13; //0000 1101
-    int result = 0;
+    int i = 10;
+    float f = 2.34;;
+    char ch = 'k';
     
-    // this '&', '|'and other bitwise operator works on bit level
-    result = a|b;
+    //creating void pointer
+    void *ptr;
     
-    printf("result is %d \n", result);
+    //casting void pointer to int
+    ptr = &i;
+    printf("value of i is %d\n", *(int*)ptr);
+    
+    //casting void pointer to float
+    ptr = &f;
+    printf("value of f is %f\n", *(float*)ptr);
+    
+    //casting void pointer to character
+    ptr = &ch;
+    printf("value of ch is %c\n", *(char*)ptr);
     
     return 0;
+    
 }
