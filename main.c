@@ -1,28 +1,50 @@
-//calculate the average of the elements of an array
+// calculator program using statement
+
 #include <stdio.h>
-int main (void)
+int main(void)
 {
-    int grades[10], sum = 0, i, avg;
+    int a, b, add, sub, mul, div ;
+    char operator;
     
-    //entering elements into the array (from the user)
-    printf("\nenter any 5 elements into the array\n");
-    for (i=0; i<5; i++)
+    //taking input from the user
+    printf("\nenter value 1 : ");
+    scanf("%d", &a);
+    printf("\nenter value 2 : ");
+    scanf("%d", &b);
+    
+    printf("\nselect any symbol\n\n'+' for addition\n'-' for subtraction\n'*' for multiplication\n'/' for division\n");
+    scanf(" %c",&operator);
+    
+    //applying switch cases
+    switch (operator)
     {
-        scanf("%d", &grades[i]);
+        case '+':
+            add = a+b;
+            printf("\naddition of entered number is %d\n", add);
+            break;
+        case '-':
+            sub = a-b;
+            printf("\nsubtraction of entered number is %d\n", sub);
+            break;
+        case '*':
+            mul = a*b;
+            printf("\nmultiplication of entered number is %d\n", mul);
+            break;
+        case '/':
+            if(b!=0)
+            {
+                div = a/b;
+                printf("\ndivision is %d\n", div);
+            }
+            else
+            {
+                printf("error : division by zero/n");
+            }
+            break;
+        default:
+            printf("\ninvalid operator\n");
+            break;
     }
-    
-    //applying condition to get the sum of the elements of the array
-    for (i=0; i<5; i++)
-    {
-        sum = sum + grades[i];
-    }
-    
-    //finding average value
-    avg = sum/5;
-    
-    //printing output to the user
-    printf("the average value of the elements is %d \n", avg);
     
     return 0;
-    
 }
