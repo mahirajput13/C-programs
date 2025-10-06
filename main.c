@@ -1,24 +1,34 @@
-// convert number of minutes into days and years
-// minutes should be entered by the user
+// counting the number of letters, digits, punctuation characters in the string
 
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 int main(void)
 {
-    float mins, days, normalyear, leapyear;
     
-    //taking input from the user
-    printf("\nenter the number of minutes to convert them into days, normal years and leap years : ");
-    scanf("%f", &mins);
+    char str[100];
+    int nletters = 0, ndigits = 0, npunct = 0;
     
-    //applying condition
-    days = (mins/(60.0*24.0));
-    normalyear = (mins/(60.0*24.0*365.0));
-    leapyear = (mins/(60.0*24.0*366.0));
+    //taking string as input
+    printf("\nenter an interesting string of less than 100 characters : \n");
+    scanf("%s", str);
     
-    //displaying output
-    printf("\nthe number of days in entered minutes are %f ", days);
-    printf("\nthe number of normal years in entered minuutes are %f ", normalyear);
-    printf("\nthe number of leap years in entered minutes are %f \n", leapyear);
+    //applying loop
+    for (int i=0; str[i]!='\0'; i++)
+    {
+        if(isalpha(str[i]))
+            ++nletters;
+        else if(isdigit(str[i]))
+            ++ndigits;
+        else if(ispunct(str[i]))
+            ++npunct;
+    }
+    
+    //printing the counted letters, digits, punctuation characters
+    printf("\nyour entered string contains %d letters\n", nletters);
+    printf("\nyour entered string contains %d digits\n", ndigits);
+    printf("\nyour entered string contains %d punctuation characters\n\n", npunct);
     
     return 0;
+    
 }
