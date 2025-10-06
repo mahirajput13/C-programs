@@ -1,17 +1,17 @@
-// display the size of various datatypes
-
+//enter any number provided by user
 #include <stdio.h>
 int main(void)
 {
+    int n;
+    
+    //taking input by the user
+    printf("enter any number to print : \n");
+    scanf("%d", &n);
+    
     //displaying output
-    printf("datatype char occupies %lu bytes\n", sizeof(char));
-    printf("datatype short occupies %lu bytes\n", sizeof(short));
-    printf("datatype int occupies %lu bytes\n", sizeof(int));
-    printf("datatype float occupies %lu bytes\n", sizeof(float));
-    printf("datatype long occupies %lu bytes\n", sizeof(long));
-    printf("datatype double occupies %lu bytes\n", sizeof(double));
-    printf("datatype long long occupies %lu bytes\n", sizeof(long long));
-    printf("datatype long double occupies %lu bytes\n", sizeof(long double));
+    printf("number entered by you is %d \n", n);
     
     return 0;
 }
+
+
